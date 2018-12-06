@@ -192,6 +192,7 @@ def auto(request, page_id):
         page_id = 1
     task_list = models.Qps.objects.order_by('id')[::-1]
     current_page = page_id
+    aa=0
     current_page = int(current_page)
     page_obj = pagination.Page(current_page, len(task_list), 16, 9)
     data = task_list[page_obj.start:page_obj.end]
